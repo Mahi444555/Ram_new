@@ -1,0 +1,112 @@
+<div class="para">
+
+  <div class="sidebar">
+    <h1>Learn to code by watching others</h1>
+    <p>see how experienced developers solve problems in ream-time.
+      watching scripted tutorials is great. but understading how developers thing is invaluable.
+    </p>
+  </div>
+
+
+  <div class="form0">
+     <label for="" class="form-label ">
+      <h4 id="heading" class="btn btn-info">Try free 7 days then $20/mo. thereafter</h4>
+    </label>
+    <div class="form1">
+    <!-- .... -->
+   
+    <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+      <div>
+        <!-- <label for="name" class="form-label mt-2">Name:</label> -->
+        <input placeholder="First Name" type="text" id="name" formControlName="name" class="form-control mt-3">
+
+        <div *ngIf="myForm.get('name').invalid && myForm.get('name').touched">
+          <div class="alert alert-danger" *ngIf="myForm.get('name').errors.required"
+            style="height:5px; align-items: center; text-align:center; position: relative; top: -5px; ">Name is
+            required.</div>
+        </div>
+
+      </div>
+
+      <!-- //// -->
+      <div>
+        <!-- <label for="name" class="form-label mt-2">Name:</label> -->
+        <input placeholder="Last Name" type="text" id="Lname" formControlName="Lname" class="form-control mt-3">
+
+        <div *ngIf="myForm.get('Lname').invalid && myForm.get('Lname').touched">
+          <div class="alert alert-danger" *ngIf="myForm.get('Lname').errors.required"
+            style="height:5px; align-items: center; text-align:center; position: relative; top: -2px; ">Last Name is
+            required.</div>
+        </div>
+
+      </div>
+
+      <!--  -->
+
+      <div>
+        <!-- <label for="email" class="form-label mt-2">Email:</label> -->
+        <input placeholder="Email Address" type="email" id="email" formControlName="email" class="form-control mt-3">
+
+        <div *ngIf="myForm.get('email').invalid && myForm.get('email').touched">
+          <div class="alert alert-danger" *ngIf="myForm.get('email').errors.required"
+            style="height:5px; align-items: center; text-align: center;">Email is required.</div>
+          <div class="alert alert-danger" *ngIf="myForm.get('email').errors.email"
+            style="height:5px; align-items: center; text-align: center;">Invalid email format.</div>
+        </div>
+      </div>
+
+      <div>
+        <!-- <label for="password" class="form-label mt-2">Password:</label> -->
+        <input placeholder="Password" type="password" id="password" formControlName="password" class="form-control mt-3">
+        <div *ngIf="myForm.get('password').invalid && myForm.get('password').touched">
+          <div class="alert alert-danger" *ngIf="myForm.get('password').errors.required"
+            style="height:5px; align-items: center; text-align: center;">Password is required.</div>
+          <div class="alert alert-danger" *ngIf="myForm.get('password').errors.minlength"
+            style="height:5px; align-items: center; text-align: center;">Password should be at least 6 characters long.
+          </div>
+        </div>
+      </div>
+
+      <button id="btn2" type="submit" [disabled]="myForm.invalid" class="btn btn-success  mt-3">CLAIM YOUR FREE TRIAL</button>
+      <!-- <label for="" class="form-label "> <h4 class="btn btn-success mt-2">Try free 7 days then $20/mo. thereafter</h4></label> -->
+      <p class="p1">By clicking the button, you are agreeing to our<a href=""> Terms and Services</a></p>
+    </form>
+    <!-- .... -->
+   </div>
+  </div>
+
+</div>
+<!-- 
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <div>
+    <label for="name" class="form-label mt-2">Name:</label>
+    <input type="text" id="name" formControlName="name"  class="form-control">
+
+    <div *ngIf="myForm.get('name').invalid && myForm.get('name').touched">
+      <div  class="alert alert-danger"  *ngIf="myForm.get('name').errors.required">Name is required.</div>
+    </div>
+
+  </div>
+
+  
+  <div>
+    <label for="email" class="form-label mt-2">Email:</label>
+    <input type="email" id="email" formControlName="email" class="form-control">
+
+    <div *ngIf="myForm.get('email').invalid && myForm.get('email').touched">
+      <div class="alert alert-danger" *ngIf="myForm.get('email').errors.required">Email is required.</div>
+      <div class="alert alert-danger" *ngIf="myForm.get('email').errors.email">Invalid email format.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="password" class="form-label mt-2">Password:</label>
+    <input type="password" id="password" formControlName="password" class="form-control">
+    <div *ngIf="myForm.get('password').invalid && myForm.get('password').touched">
+      <div class="alert alert-danger" *ngIf="myForm.get('password').errors.required">Password is required.</div>
+      <div  class="alert alert-danger" *ngIf="myForm.get('password').errors.minlength">Password should be at least 6 characters long.</div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form> -->
